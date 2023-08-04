@@ -1,0 +1,43 @@
+as expressoes regulares sao formas de encontrarmos padroes em uma string
+
+abrir o site regular expressions 101, que suporta varias linguagens e selecionar JS
+para começar a encontrar as expressoes regulares no código do vscode, primeiro definimos com duas barras e inserir no meio delas o padrao que queremos encontrar
+
+no site, essas barras ja vem pré definidas
+
+se ativarmos a flag 'g' (de global), todas as expressoes que inserirmos no input serão marcadas, entao podemos usar isso para encontrar determinadas posiçoes de uma string e modificá-las, como por exemplo um numero de telefone, um cpf, email, etc e validar se essas strings estão no formato correto.
+
+se a flag 'g' estiver desativada, ele encontrará apenas o primeiro dos caracteres que contém no texto, e não todos os outros que são iguais
+
+a flag 'i' de insensitive serve para diferenciar as letras maiusculas das minusculas, então, se ativada, se tornara sensivel se as letras forem maiusculas ou minusculas
+
+podemos usar também alguns operadores para encontrar somente o primeiro ou o ultimo caractere que foi selecionado. para encontrar somente o primeiro, basta utilizar um acento ^ seguido de um caractere. exemplo: ^L 
+
+para encontrar somente o último caractere, utilizamos o operador $ DEPOIS do caractere digitado. exemplo: L$
+
+outro recurso interessante é a barra pipe | que funciona como um OU, então podemos digitar dois padrões separados por essa barra. exemplo: lorem|ipsum. então os caracteres digitados serão encontrados
+
+outro recurso interessante é o +, exemplo: a+ (ele vai encontrar as ocorrencias em sequencia desse 'a', enquanto tiver 'a' em sequencia, ele vai encontrar. porém se pular qualquer outra letra ele já não encontra)
+
+outro recurso especial é o ponto '.' que funciona como se fosse um coringa, que encontra qualquer coisa, que captura o 'a' por exemplo e qualquer caractere que está em seguida desse 'a'
+
+para encontrar os parenteses com as expressoes regulares e deixá-los de fora do que procura, é necessario utilizar a sintaxe /(\..\)/
+as contra barras servem como um 'escape' pra dizer que queremos o funcionamento normal, para indicar que não queremos o caractere especial dos parenteses, então o que será encontrado quando usamos a contra barra será o que contém dentro dos parenteses, isso vale para qualquer caractere especial, então se for preciso encontrar um sinal de '+', é necessario utilizar a contra barra antes do caractere. exemplo: \+
+
+o caractere \w serve para encontrar qualquer caractere alfanumerico que não seja especial, então essa expressao encontrara qualquer coisa que sejam numeros ou letras ou underline, porem não marca pontos, virgulas, parenteses, etc
+
+se usarmos o W maiusculo, ele faz exatamente ao contrário, encontrando os caracteres especiais e não os caracteres alfanumericos
+
+para encontrar apenas digitos, utilizamos a expressao \d e então esse atalho encontrara tudo que for de 0 a 9, se usar o maiúsculo ele irá encontrar qualquer coisa que não seja um número
+
+o \s é um atalho especifico para encontrar espaços em branco, e ao contrario ele encontra tudo que não for espaços em branco
+
+tambem e possivel realizar agrupamentos nas expressoes, entao podemos utilizar os colchetes [] e então podemos colocar varios caracteres dentro desses colchetes, então ele irá encontrar todas as regras juntas, e também existem outras formas de selecionar os caracteres que precisamos encontrar em questao de letras, basta colocar um traço - do 'a' até a letra que queremos chegar. exemplo: [a-z] => ele encontrara tudo que estiver dentro da regra selecionada, e também podemos selecionar a captura de letras maiúsculas e também podemos encadear a captura de letras minusculas e maiusculas utilizando a regra [A-Za-z]
+
+tambem podemos utilizar agrupamentos com chaves {} para encontrar uma quantidade de caracteres entre o minimo e o maximo de ocorrencias, por exemplo: se eu quiser encontrar dois 'a' em sequencia, posso utilizar a regra a{1, 2} e então ele encontrara os 'a' em sequencia de dois numeros, e isso pode ser feito com qualquer quantidade de numeros escolhidos 
+
+para usar o look ahead, é preciso digitar uma regra e, seguido dela, abrir parenteses () com um ponto de interrogação e um operador de igualdade(?=) e então, um exemplo para encontrar uma regra que sera seguida de um espaço é utilizar a seguinte sintaxe: or(?=\s) - será encontrado apenas os 'or' que estão seguidos de espaços, se for necessario fazer o inverso disto, basta trocar o sinal de '=' por um ponto de exclamação '!' exemplo: or(?!\s) - ele encontrara todos os 'or' que não são seguidos de espaços
+
+já para usar o look behind positivo, basta inserir um '<' e inserir a regra DEPOIS do conteudo dos parenteses - (?<=\l)or e então ele encontrara todos os 'or' que contem um 'l' no final
+
+o look behind negativo basta trocar o sinal de '=' por um de exclamação também, e então ele encontrara todos os 'or' que não tem o 'l' antes dele
