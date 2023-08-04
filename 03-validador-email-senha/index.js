@@ -1,6 +1,6 @@
 function validateEmail(email) {
     if (!email.match(/\w{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/)) {
-        const err = new Error('Email inválido.')
+        const err = new Error('Invalid')
         err.input = 'email'
         throw err
     }
@@ -13,7 +13,7 @@ function validatePassword(password) {
         !password.match(/\d/) ||
         !password.match(/[^a-zA-Z0-9\s]/)
     ) {
-        const err = new Error('Senha inválida.')
+        const err = new Error('Invalid')
         err.input = 'password'
         throw err
     }
