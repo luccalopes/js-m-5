@@ -1,0 +1,13 @@
+primeiro, criar uma função para validar email e passar (email) como parametro
+fazer uma verificação, se o email.match NÃO tiver (/\w{2,}@[a-zA-Z]{2,}\.[a-zA-Z]{2,}/)), criar uma variável para new Error passando uma string para inválido, capturar o 'email' dentro da variável de erro e depois dar um throw nela
+
+agora, criar uma função para validar a senha, passando a senha como parametro e então fazer uma verificação:
+SE o tamanho da senha for menor do que 8, ou
+se for diferente de a-z (expressões regulares) e também A-Z, ou
+se for diferente de dígitos, ou
+se for diferente de (/[^a-zA-Z0-9\s]/)
+
+dentro do if criar outra variável para o erro, e chamar um novo erro com uma string indicando que é inválido e depois retornar com um throw
+
+agora, criar uma função para resetar o estilo do formulario, passando inputs como parametro
+dentro da função, chamar um Object.entries

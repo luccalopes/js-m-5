@@ -40,10 +40,9 @@ input {
 span {
     color: #f64348;
     font-size: .75rem;
-    font-size: 1rem;
     margin-top: 1.5rem;
     padding: .5rem 0;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 button:hover {
