@@ -1,0 +1,6 @@
+a função de mostrar o imc deve receber peso e altura como parametros, dentro da função, chamar a outra função do imc, com os mesmos parametros, seguida de um .then() e o argumento dentro do then deve ser o resultado, então passar uma função de callback que conterá um console.log que vai mostrar uma mensagem no console com o resultado.
+
+agora, fazer uma verificação para o peso: se o resultado for menor do que 18.5, retornar no console a situação de magreza
+se o resultado for menor do que 25, a situação do peso deve ser normal
+se for menor do que 30, deve ser sobrepeso
+se for menor do que 40, a situação deve ser de obesidade e, por ultimo, a situação deve ser de obesidade grave.
