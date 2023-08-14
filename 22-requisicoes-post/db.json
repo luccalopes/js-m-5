@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Olá, mundo",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus inventore volupt.",
+      "author": "Lucca"
+    },
+    {
+      "id": 2,
+      "title": "Requisições POST com Javascript",
+      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus inventore volupt.",
+      "author": "Lucca"
+    },
+    {
+      "title": "Aprendendo Javascript",
+      "author": "Lucca'",
+      "content": "Lorem ipsum dolor sit amet",
+      "id": 3
+    },
+    {
+      "title": "Meu quarto artigo",
+      "author": "Lucca",
+      "content": "Tô perdido mano",
+      "id": 4
+    },
+    {
+      "title": "Teste",
+      "author": "Lucca",
+      "content": "teste teste teste",
+      "id": 5
+    }
+  ]
+}
