@@ -1,0 +1,34 @@
+começar iniciando o npm no terminal
+instalar o json-server
+
+criar um script para executar o json-server de forma mais pratica, ela deve ter o nome da biblioteca e depois, deve seguir a flag --watch db.json (o watch é para acompanhar as mudanças em determinado arquivo, no caso o db.json)
+
+dentro do arquivo db.json, criar um banco de dados fictício que deve conter:
+um objeto, dentro deste objeto, criar um array para "articles" e, dentro desse array, criar um objeto que deve conter um "id" com o primeiro número (1), um "title" que deve conter uma string, um "content" que deve conter um texto qualquer e um "author" que deve receber o nome da pessoa que postou o conteúdo. poderiam ser outras propriedades, mas neste caso são só essas
+
+depois, rodar o npm run json-server
+
+agora, começar criando uma função no arquivo js para renderizar artigo que recebera como parametro os dados de um artigo, dentro da função, começar criando um elemento para article
+adicionar uma classe no article
+tambem setar o id do article, chamar de `article-${articleData.id}` (parametro da função)
+
+agora criar um elemento para o título que deve ser um h3
+adicionar uma classe nele tambem (article-title)
+setar o conteudo desse título que vai ser o articleData.title
+
+fazer a mesma coisa para o conteúdo, o elemento deve ser uma div mesmo, adicionar uma classe nele
+agora, setar o innerHTML que deve ser = articleData.content
+
+agora criar o elemento do autor que tambem deve ser uma div, adicionar uma classe que deve ser article-author, o textContent deve ser articleData.author
+
+agora para fazer esses elementos aparecerem na tela, basta fazer um article.append com title, author, content
+
+abaixo, selecionar o elemento dos artigos no final do html com o id #articles, passar um appendChild com article
+
+agora, criar uma função assincrona que deve se chamar fetchArticles, dentro dela, criar uma variável para articles que deve receber um await fetch que deve conter a porta do localhost dentro dos parenteses, fora dos parenteses passar um .then(res => res.json())
+
+agora, chamar o articles.forEach com o renderArticle dentro dos parenteses
+
+já fora da função, adicionar um evento em 'DOMContentLoaded, () => {
+    fetchArticles()
+}
