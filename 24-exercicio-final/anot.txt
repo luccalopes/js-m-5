@@ -1,0 +1,38 @@
+npm init -y
+npm install json-server
+configurar o package.json para ter um script para executar o json-server
+
+os dados do back-end devem conter um objeto, que deve ter um array para "transações". dentro do array, construir 4 objetos que devem conter dados de id, nome e quantidade (amount). no primeiro objeto, o nome deve ser para freela, o segundo deve ser para salário, o terceiro deve ser para conta de água e o quarto deve ser para conta de luz - os dois primeiros devem ter valores positivos e os dois ultimos devem conter valores negativos.
+
+agora, criar uma página html que deve  começar com um h1 para "minhas finanças", depois uma tag para o conteudo principal, dentro do conteudo principal deve conter um formulário, com um título para nova transação: inserir um input hidden sem valor com o nome e id contendo um id, uma label para nome, um input texto para nome, uma label para quantidade, um input number que deve ter um step 0.01 com id amount e nome amount, pular duas linhas, um botão para salvar e então fechar o formulário.
+
+fora do formulário, uma div que dentro deve conter um título para saldo com uma span id balance, outro título para histórico de transações, abaixo uma section com id transações
+
+no arquivo js, começar criando uma função para criar um container de transação que deve receber um id como parametro, dentro da função criar uma variável para container que deve criar um elemento do tipo div, adicionar uma classe do tipo 'transaction', setar um id para `transaction-${id}` e retornar o container
+
+agora criar uma função para criar um título para transação que deve receber um nome como parametro - criar uma variável para título que deve criar um elemento do tipo 'span', adicionar uma classe 'transaction-title', adicionar um text content que deve receber name e retornar a variável
+
+a próxima função é para criar um elemento para o valor da transação, que deve receber a quantidade como parametro, criar uma variável para criar um elemento do tipo 'span', adicionar uma classe 'transaction-amount' e abaixo criar uma variável para 'formater' que deve receber o comando 'Intl.NumberFormat('pt-br'), dentro do comando inserir o compactDisplay que deve receber a string 'long', currency 'BRL' e style 'currency'
+
+agora criar uma variável para formatar a quantidade, que recebera um formater.format com quantia como parametro e então fazer uma verificação:
+
+se a quantia for maior do que 0, o conteudo do texto da span deve receber um `${formatedAmount} C` e adicionar uma classe para 'credit'
+
+se não, o conteudo do texto deve receber um `${formatedAmount} D` e adicionar uma classe para 'debit' e retornar o span
+agora vamos para a criação da função que renderiza uma transação na tela: ela deve receber um parametro 'transaction' - criar uma variável para container que deve receber a função de criar o container de transação(transaction.id)
+
+criar uma variável para título que deve receber a função de criar o título da transação(transaction.name)
+
+criar uma variável para a quantia(transaction.amount)
+
+agora, capturar o seletor #transactions e passar um append (container)
+container recebe um append para título e quantia
+
+agora, criar uma função assincrona para fazer a requisição GET para buscar as transações, que vai retornar um await fetch com a porta criada com um then que recebe um res => res.json()
+
+agora para armazenar as transações vamos criar uma variável no escopo global que começará com um array vazio - junto com ela criaremos uma função para exibir na tela (no elemento específico) o saldo total calculado com base nos valores de transações nesse array -  o nome deve ser updateBalance -  dentro da função, criar uma variável que captura o id #balance - balanceSpan
+
+agora, criar uma variável que que vai fazer um reduce na variável transactions, que os parametros devem ser de soma e transação e então fazer o seguinte - => sum + transaction.amount, 0
+
+agora criar uma variável para formater, que recebe um Intl.NumberFormat('pt-br') e dentro das chaves, passar um compactDisplay que recebe 'long', currency 'BRL' e style 'currency'
+passar o text content que recebe um formater.format(balance)
